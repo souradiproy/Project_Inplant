@@ -5,6 +5,7 @@
  */
 package liveView;
 
+import java.math.BigDecimal;
 import java.util.List;
 import org.hibernate.Hibernate;
 import org.hibernate.Query;
@@ -17,26 +18,31 @@ import org.hibernate.Session;
 public class TripList 
 {
     Session session = null;
-    private List<hibernate.pojo.TblVehicleFlight> TripList = null;
+    private List<hibernate.pojo.TblMapping> TripList = null;
     public TripList() 
     {
-        this.session = hibernate.helper.NewHibernateUtil.getSessionFactory().openSession();
+        
     }
 
     /**
      * @return the TripDataList
      */
-    public List<hibernate.pojo.TblVehicleFlight> getTripList() 
+    public List<hibernate.pojo.TblMapping> getTripList(BigDecimal ITransporterId) 
     {
-        List<hibernate.pojo.TblMapping> tripList = null;
+        this.session = hibernate.helper.NewHibernateUtil.getSessionFactory().openSession();
+        
         try 
         {
             org.hibernate.Transaction tx = session.beginTransaction();
-            Query q = session.createQuery ("FROM hibernate.pojo.TblMapping");
-            tripList = (List<hibernate.pojo.TblMapping>) q.list();
-            for(hibernate.pojo.TblMapping i: tripList)
+            Query q;
+            if(!(ITransporterId.equals(new BigDecimal(-1))))
+                q=session.createQuery ("FROM hibernate.pojo.TblMapping where BIsActive=true And tblTransporter="+ITransporterId);
+            else
+                q=session.createQuery ("FROM hibernate.pojo.TblMapping where BIsActive=true");
+            TripList = (List<hibernate.pojo.TblMapping>) q.list();
+            for(hibernate.pojo.TblMapping i: TripList)
             {
-                //Hibernate.initialize(i.getTblLivePath());
+                Hibernate.initialize(i.getTblLivePath());
             }
         } 
         catch (Exception e) 
@@ -50,5 +56,14 @@ public class TripList
         return TripList;
     }
     
-    
+     public List<hibernate.pojo.TblMapping> getTripList()
+     {
+         return getTripList(new BigDecimal(-1));
+     }
+     
+     public static void main(String args[])
+     {
+         TripList t=new TripList();
+         System.out.println(t.getTripList());
+     }
 }

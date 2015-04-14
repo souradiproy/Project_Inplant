@@ -5,8 +5,11 @@
  */
 package liveView;
 
+import java.math.BigDecimal;
 import java.util.Collections;
+
 import java.util.List;
+import org.hibernate.Hibernate;
 import org.hibernate.Query;
 import org.hibernate.Session;
 
@@ -14,31 +17,26 @@ import org.hibernate.Session;
  *
  * @author Jonty
  */
-public class EposList 
+public class TripData 
 {
     Session session = null;
-    private List<hibernate.pojo.TblEpos> eposList = null;
-
-    public EposList() 
+    private List<hibernate.pojo.TblVehicleFlight> TripDataList = null;
+    public TripData() 
     {
-        
     }
 
-    /**List<etrans.TblVehicleFlight> TripDataList = null;
-        
-     * @return the eposList
+    /**
+     * @return the TripDataList
      */
-    
-    
-    public List<hibernate.pojo.TblEpos> getEposList() 
+    public List<hibernate.pojo.TblVehicleFlight> getTripDataList(BigDecimal b) 
     {
         this.session = hibernate.helper.NewHibernateUtil.getSessionFactory().openSession();
         try 
         {
             org.hibernate.Transaction tx = session.beginTransaction();
-            Query q = session.createQuery ("FROM hibernate.pojo.TblEpos");
-            eposList = (List<hibernate.pojo.TblEpos>) q.list();
-            Collections.sort(eposList);
+            Query q = session.createQuery ("from TblVehicleFlight where i_trip_id="+b);
+            TripDataList = (List<hibernate.pojo.TblVehicleFlight>) q.list();
+            Collections.sort(TripDataList);
         } 
         catch (Exception e) 
         {
@@ -48,7 +46,7 @@ public class EposList
         {
             this.session.close();
         }
-        return eposList;
+        return TripDataList;
     }
     
 }
