@@ -3,20 +3,23 @@
 "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
 <!-- Generated 14 Apr, 2015 8:17:12 PM by Hibernate Tools 4.3.1 -->
 <hibernate-mapping>
-    <class name="hibernate.pojo.TblProcess" table="tbl_process" schema="pr_inplant" optimistic-lock="version">
-        <id name="IProcessId" type="big_decimal">
-            <column name="i_process_id" precision="30" scale="0" />
+    <class name="hibernate.pojo.TblLivePath" table="tbl_live_path" schema="pr_inplant" optimistic-lock="version">
+        <id name="IPathId" type="big_decimal">
+            <column name="i_path_id" precision="32" scale="0" />
             <generator class="assigned" />
         </id>
         <many-to-one name="tblPlant" class="hibernate.pojo.TblPlant" fetch="select">
             <column name="i_plant_id" precision="32" scale="0" not-null="true" />
         </many-to-one>
-        <property name="TProcessType" type="string">
-            <column name="t_process_type" />
+        <property name="TCurrPath" type="string">
+            <column name="t_curr_path" />
+        </property>
+        <property name="TNext" type="string">
+            <column name="t_next" />
         </property>
         <set name="tblMappings" table="tbl_mapping" inverse="true" lazy="true" fetch="select">
             <key>
-                <column name="i_process_id" precision="30" scale="0" />
+                <column name="i_path_id" precision="32" scale="0" />
             </key>
             <one-to-many class="hibernate.pojo.TblMapping" />
         </set>

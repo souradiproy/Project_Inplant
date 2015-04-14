@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
 "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
-<!-- Generated 5 Apr, 2015 5:42:48 PM by Hibernate Tools 4.3.1 -->
+<!-- Generated 14 Apr, 2015 8:17:12 PM by Hibernate Tools 4.3.1 -->
 <hibernate-mapping>
     <class name="hibernate.pojo.TblEpos" table="tbl_epos" schema="pr_inplant" optimistic-lock="version">
         <id name="IMachineId" type="big_decimal">
@@ -29,11 +29,11 @@
         <property name="ITimeInBetween" type="big_decimal">
             <column name="i_time_in_between" precision="30" scale="0" />
         </property>
-        <set name="tblLinksesForITo" table="tbl_links" inverse="true" lazy="true" fetch="select">
+        <set name="tblExceptionses" table="tbl_exceptions" inverse="true" lazy="true" fetch="select">
             <key>
-                <column name="i_to" precision="30" scale="0" />
+                <column name="i_machine_id" precision="30" scale="0" not-null="true" />
             </key>
-            <one-to-many class="hibernate.pojo.TblLinks" />
+            <one-to-many class="hibernate.pojo.TblExceptions" />
         </set>
         <set name="tblVehicleFlights" table="tbl_vehicle_flight" inverse="true" lazy="true" fetch="select">
             <key>
@@ -41,11 +41,11 @@
             </key>
             <one-to-many class="hibernate.pojo.TblVehicleFlight" />
         </set>
-        <set name="tblExceptionses" table="tbl_exceptions" inverse="true" lazy="true" fetch="select">
+        <set name="tblLinksesForITo" table="tbl_links" inverse="true" lazy="true" fetch="select">
             <key>
-                <column name="i_machine_id" precision="30" scale="0" not-null="true" />
+                <column name="i_to" precision="30" scale="0" />
             </key>
-            <one-to-many class="hibernate.pojo.TblExceptions" />
+            <one-to-many class="hibernate.pojo.TblLinks" />
         </set>
         <set name="tblLinksesForIFrom" table="tbl_links" inverse="true" lazy="true" fetch="select">
             <key>

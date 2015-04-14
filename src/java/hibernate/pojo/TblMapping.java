@@ -1,5 +1,5 @@
 package hibernate.pojo;
-// Generated 5 Apr, 2015 5:42:46 PM by Hibernate Tools 4.3.1
+// Generated 14 Apr, 2015 8:17:11 PM by Hibernate Tools 4.3.1
 
 
 import java.math.BigDecimal;
@@ -16,6 +16,7 @@ public class TblMapping  implements java.io.Serializable {
      private BigDecimal ITripId;
      private TblDo tblDo;
      private TblDriver tblDriver;
+     private TblLivePath tblLivePath;
      private TblPlant tblPlant;
      private TblProcess tblProcess;
      private TblTransporter tblTransporter;
@@ -23,8 +24,8 @@ public class TblMapping  implements java.io.Serializable {
      private BigDecimal ICardId;
      private Date dtCreated;
      private boolean BIsActive;
-     private Set<TblVehicleFlight> tblVehicleFlights = new HashSet<TblVehicleFlight>(0);
      private Set<TblExceptions> tblExceptionses = new HashSet<TblExceptions>(0);
+     private Set<TblVehicleFlight> tblVehicleFlights = new HashSet<TblVehicleFlight>(0);
 
     public TblMapping() {
     }
@@ -36,10 +37,11 @@ public class TblMapping  implements java.io.Serializable {
         this.tblVehicle = tblVehicle;
         this.BIsActive = BIsActive;
     }
-    public TblMapping(BigDecimal ITripId, TblDo tblDo, TblDriver tblDriver, TblPlant tblPlant, TblProcess tblProcess, TblTransporter tblTransporter, TblVehicle tblVehicle, BigDecimal ICardId, Date dtCreated, boolean BIsActive, Set<TblVehicleFlight> tblVehicleFlights, Set<TblExceptions> tblExceptionses) {
+    public TblMapping(BigDecimal ITripId, TblDo tblDo, TblDriver tblDriver, TblLivePath tblLivePath, TblPlant tblPlant, TblProcess tblProcess, TblTransporter tblTransporter, TblVehicle tblVehicle, BigDecimal ICardId, Date dtCreated, boolean BIsActive, Set<TblExceptions> tblExceptionses, Set<TblVehicleFlight> tblVehicleFlights) {
        this.ITripId = ITripId;
        this.tblDo = tblDo;
        this.tblDriver = tblDriver;
+       this.tblLivePath = tblLivePath;
        this.tblPlant = tblPlant;
        this.tblProcess = tblProcess;
        this.tblTransporter = tblTransporter;
@@ -47,8 +49,8 @@ public class TblMapping  implements java.io.Serializable {
        this.ICardId = ICardId;
        this.dtCreated = dtCreated;
        this.BIsActive = BIsActive;
-       this.tblVehicleFlights = tblVehicleFlights;
        this.tblExceptionses = tblExceptionses;
+       this.tblVehicleFlights = tblVehicleFlights;
     }
    
     public BigDecimal getITripId() {
@@ -71,6 +73,13 @@ public class TblMapping  implements java.io.Serializable {
     
     public void setTblDriver(TblDriver tblDriver) {
         this.tblDriver = tblDriver;
+    }
+    public TblLivePath getTblLivePath() {
+        return this.tblLivePath;
+    }
+    
+    public void setTblLivePath(TblLivePath tblLivePath) {
+        this.tblLivePath = tblLivePath;
     }
     public TblPlant getTblPlant() {
         return this.tblPlant;
@@ -121,19 +130,19 @@ public class TblMapping  implements java.io.Serializable {
     public void setBIsActive(boolean BIsActive) {
         this.BIsActive = BIsActive;
     }
-    public Set<TblVehicleFlight> getTblVehicleFlights() {
-        return this.tblVehicleFlights;
-    }
-    
-    public void setTblVehicleFlights(Set<TblVehicleFlight> tblVehicleFlights) {
-        this.tblVehicleFlights = tblVehicleFlights;
-    }
     public Set<TblExceptions> getTblExceptionses() {
         return this.tblExceptionses;
     }
     
     public void setTblExceptionses(Set<TblExceptions> tblExceptionses) {
         this.tblExceptionses = tblExceptionses;
+    }
+    public Set<TblVehicleFlight> getTblVehicleFlights() {
+        return this.tblVehicleFlights;
+    }
+    
+    public void setTblVehicleFlights(Set<TblVehicleFlight> tblVehicleFlights) {
+        this.tblVehicleFlights = tblVehicleFlights;
     }
 
 

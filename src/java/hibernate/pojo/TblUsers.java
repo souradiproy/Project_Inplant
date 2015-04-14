@@ -1,5 +1,5 @@
 package hibernate.pojo;
-// Generated 5 Apr, 2015 5:42:46 PM by Hibernate Tools 4.3.1
+// Generated 14 Apr, 2015 8:17:11 PM by Hibernate Tools 4.3.1
 
 
 import java.math.BigDecimal;
@@ -14,12 +14,10 @@ public class TblUsers  implements java.io.Serializable {
      private TblPlant tblPlant;
      private String SPassword;
      private String SPasswordMd5;
-     private BigDecimal ITransporterId;
-     private BigDecimal IDriverId;
-     private Boolean BAddTrip;
      private Boolean BRemoveTrip;
      private Boolean BViewTrip;
      private Boolean BNodeView;
+     private Boolean BAddTrip;
      private Boolean BViewException;
      private Boolean BEndException;
      private Boolean BViewHistory;
@@ -34,6 +32,8 @@ public class TblUsers  implements java.io.Serializable {
      private Boolean BAddDriver;
      private Boolean BViewDo;
      private Boolean BLoggedIn;
+     private BigDecimal ITransporterId;
+     private BigDecimal IDriverId;
 
     public TblUsers() {
     }
@@ -44,17 +44,15 @@ public class TblUsers  implements java.io.Serializable {
         this.tblPlant = tblPlant;
         this.SPasswordMd5 = SPasswordMd5;
     }
-    public TblUsers(String SUsername, TblPlant tblPlant, String SPassword, String SPasswordMd5, BigDecimal ITransporterId, BigDecimal IDriverId, Boolean BAddTrip, Boolean BRemoveTrip, Boolean BViewTrip, Boolean BNodeView, Boolean BViewException, Boolean BEndException, Boolean BViewHistory, Boolean BSetupNewPlant, Boolean BPlantModify, Boolean BAddUser, Boolean BModifyUser, Boolean BChangeCurrentPlant, Boolean BAddVehicle, Boolean BModifyVehicle, Boolean BModifyDriver, Boolean BAddDriver, Boolean BViewDo, Boolean BLoggedIn) {
+    public TblUsers(String SUsername, TblPlant tblPlant, String SPassword, String SPasswordMd5, Boolean BRemoveTrip, Boolean BViewTrip, Boolean BNodeView, Boolean BAddTrip, Boolean BViewException, Boolean BEndException, Boolean BViewHistory, Boolean BSetupNewPlant, Boolean BPlantModify, Boolean BAddUser, Boolean BModifyUser, Boolean BChangeCurrentPlant, Boolean BAddVehicle, Boolean BModifyVehicle, Boolean BModifyDriver, Boolean BAddDriver, Boolean BViewDo, Boolean BLoggedIn, BigDecimal ITransporterId, BigDecimal IDriverId) {
        this.SUsername = SUsername;
        this.tblPlant = tblPlant;
        this.SPassword = SPassword;
        this.SPasswordMd5 = SPasswordMd5;
-       this.ITransporterId = ITransporterId;
-       this.IDriverId = IDriverId;
-       this.BAddTrip = BAddTrip;
        this.BRemoveTrip = BRemoveTrip;
        this.BViewTrip = BViewTrip;
        this.BNodeView = BNodeView;
+       this.BAddTrip = BAddTrip;
        this.BViewException = BViewException;
        this.BEndException = BEndException;
        this.BViewHistory = BViewHistory;
@@ -69,6 +67,8 @@ public class TblUsers  implements java.io.Serializable {
        this.BAddDriver = BAddDriver;
        this.BViewDo = BViewDo;
        this.BLoggedIn = BLoggedIn;
+       this.ITransporterId = ITransporterId;
+       this.IDriverId = IDriverId;
     }
    
     public String getSUsername() {
@@ -99,27 +99,6 @@ public class TblUsers  implements java.io.Serializable {
     public void setSPasswordMd5(String SPasswordMd5) {
         this.SPasswordMd5 = SPasswordMd5;
     }
-    public BigDecimal getITransporterId() {
-        return this.ITransporterId;
-    }
-    
-    public void setITransporterId(BigDecimal ITransporterId) {
-        this.ITransporterId = ITransporterId;
-    }
-    public BigDecimal getIDriverId() {
-        return this.IDriverId;
-    }
-    
-    public void setIDriverId(BigDecimal IDriverId) {
-        this.IDriverId = IDriverId;
-    }
-    public Boolean getBAddTrip() {
-        return this.BAddTrip;
-    }
-    
-    public void setBAddTrip(Boolean BAddTrip) {
-        this.BAddTrip = BAddTrip;
-    }
     public Boolean getBRemoveTrip() {
         return this.BRemoveTrip;
     }
@@ -140,6 +119,13 @@ public class TblUsers  implements java.io.Serializable {
     
     public void setBNodeView(Boolean BNodeView) {
         this.BNodeView = BNodeView;
+    }
+    public Boolean getBAddTrip() {
+        return this.BAddTrip;
+    }
+    
+    public void setBAddTrip(Boolean BAddTrip) {
+        this.BAddTrip = BAddTrip;
     }
     public Boolean getBViewException() {
         return this.BViewException;
@@ -238,6 +224,20 @@ public class TblUsers  implements java.io.Serializable {
     
     public void setBLoggedIn(Boolean BLoggedIn) {
         this.BLoggedIn = BLoggedIn;
+    }
+    public BigDecimal getITransporterId() {
+        return this.ITransporterId;
+    }
+    
+    public void setITransporterId(BigDecimal ITransporterId) {
+        this.ITransporterId = ITransporterId;
+    }
+    public BigDecimal getIDriverId() {
+        return this.IDriverId;
+    }
+    
+    public void setIDriverId(BigDecimal IDriverId) {
+        this.IDriverId = IDriverId;
     }
 
 

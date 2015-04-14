@@ -1,5 +1,5 @@
 package hibernate.pojo;
-// Generated 5 Apr, 2015 5:42:46 PM by Hibernate Tools 4.3.1
+// Generated 14 Apr, 2015 8:17:11 PM by Hibernate Tools 4.3.1
 
 
 import java.math.BigDecimal;
@@ -15,17 +15,18 @@ public class TblPlant  implements java.io.Serializable {
      private BigDecimal IPlantId;
      private String TPlantName;
      private String TPlantOwner;
-     private Set<TblProcess> tblProcesses = new HashSet<TblProcess>(0);
-     private Set<TblDriver> tblDrivers = new HashSet<TblDriver>(0);
      private Set<TblLinks> tblLinkses = new HashSet<TblLinks>(0);
+     private Set<TblLivePath> tblLivePaths = new HashSet<TblLivePath>(0);
+     private Set<TblDriver> tblDrivers = new HashSet<TblDriver>(0);
      private Set<TblEpos> tblEposes = new HashSet<TblEpos>(0);
-     private Set<TblMapping> tblMappings = new HashSet<TblMapping>(0);
-     private Set<TblDo> tblDos = new HashSet<TblDo>(0);
      private Set<TblPaths> tblPathses = new HashSet<TblPaths>(0);
-     private Set<TblVehicle> tblVehicles = new HashSet<TblVehicle>(0);
      private Set<TblExceptions> tblExceptionses = new HashSet<TblExceptions>(0);
-     private Set<TblTransporter> tblTransporters = new HashSet<TblTransporter>(0);
+     private Set<TblDo> tblDos = new HashSet<TblDo>(0);
+     private Set<TblVehicle> tblVehicles = new HashSet<TblVehicle>(0);
+     private Set<TblMapping> tblMappings = new HashSet<TblMapping>(0);
      private Set<TblUsers> tblUserses = new HashSet<TblUsers>(0);
+     private Set<TblTransporter> tblTransporters = new HashSet<TblTransporter>(0);
+     private Set<TblProcess> tblProcesses = new HashSet<TblProcess>(0);
 
     public TblPlant() {
     }
@@ -34,21 +35,22 @@ public class TblPlant  implements java.io.Serializable {
     public TblPlant(BigDecimal IPlantId) {
         this.IPlantId = IPlantId;
     }
-    public TblPlant(BigDecimal IPlantId, String TPlantName, String TPlantOwner, Set<TblProcess> tblProcesses, Set<TblDriver> tblDrivers, Set<TblLinks> tblLinkses, Set<TblEpos> tblEposes, Set<TblMapping> tblMappings, Set<TblDo> tblDos, Set<TblPaths> tblPathses, Set<TblVehicle> tblVehicles, Set<TblExceptions> tblExceptionses, Set<TblTransporter> tblTransporters, Set<TblUsers> tblUserses) {
+    public TblPlant(BigDecimal IPlantId, String TPlantName, String TPlantOwner, Set<TblLinks> tblLinkses, Set<TblLivePath> tblLivePaths, Set<TblDriver> tblDrivers, Set<TblEpos> tblEposes, Set<TblPaths> tblPathses, Set<TblExceptions> tblExceptionses, Set<TblDo> tblDos, Set<TblVehicle> tblVehicles, Set<TblMapping> tblMappings, Set<TblUsers> tblUserses, Set<TblTransporter> tblTransporters, Set<TblProcess> tblProcesses) {
        this.IPlantId = IPlantId;
        this.TPlantName = TPlantName;
        this.TPlantOwner = TPlantOwner;
-       this.tblProcesses = tblProcesses;
-       this.tblDrivers = tblDrivers;
        this.tblLinkses = tblLinkses;
+       this.tblLivePaths = tblLivePaths;
+       this.tblDrivers = tblDrivers;
        this.tblEposes = tblEposes;
-       this.tblMappings = tblMappings;
-       this.tblDos = tblDos;
        this.tblPathses = tblPathses;
-       this.tblVehicles = tblVehicles;
        this.tblExceptionses = tblExceptionses;
-       this.tblTransporters = tblTransporters;
+       this.tblDos = tblDos;
+       this.tblVehicles = tblVehicles;
+       this.tblMappings = tblMappings;
        this.tblUserses = tblUserses;
+       this.tblTransporters = tblTransporters;
+       this.tblProcesses = tblProcesses;
     }
    
     public BigDecimal getIPlantId() {
@@ -72,12 +74,19 @@ public class TblPlant  implements java.io.Serializable {
     public void setTPlantOwner(String TPlantOwner) {
         this.TPlantOwner = TPlantOwner;
     }
-    public Set<TblProcess> getTblProcesses() {
-        return this.tblProcesses;
+    public Set<TblLinks> getTblLinkses() {
+        return this.tblLinkses;
     }
     
-    public void setTblProcesses(Set<TblProcess> tblProcesses) {
-        this.tblProcesses = tblProcesses;
+    public void setTblLinkses(Set<TblLinks> tblLinkses) {
+        this.tblLinkses = tblLinkses;
+    }
+    public Set<TblLivePath> getTblLivePaths() {
+        return this.tblLivePaths;
+    }
+    
+    public void setTblLivePaths(Set<TblLivePath> tblLivePaths) {
+        this.tblLivePaths = tblLivePaths;
     }
     public Set<TblDriver> getTblDrivers() {
         return this.tblDrivers;
@@ -86,33 +95,12 @@ public class TblPlant  implements java.io.Serializable {
     public void setTblDrivers(Set<TblDriver> tblDrivers) {
         this.tblDrivers = tblDrivers;
     }
-    public Set<TblLinks> getTblLinkses() {
-        return this.tblLinkses;
-    }
-    
-    public void setTblLinkses(Set<TblLinks> tblLinkses) {
-        this.tblLinkses = tblLinkses;
-    }
     public Set<TblEpos> getTblEposes() {
         return this.tblEposes;
     }
     
     public void setTblEposes(Set<TblEpos> tblEposes) {
         this.tblEposes = tblEposes;
-    }
-    public Set<TblMapping> getTblMappings() {
-        return this.tblMappings;
-    }
-    
-    public void setTblMappings(Set<TblMapping> tblMappings) {
-        this.tblMappings = tblMappings;
-    }
-    public Set<TblDo> getTblDos() {
-        return this.tblDos;
-    }
-    
-    public void setTblDos(Set<TblDo> tblDos) {
-        this.tblDos = tblDos;
     }
     public Set<TblPaths> getTblPathses() {
         return this.tblPathses;
@@ -121,6 +109,20 @@ public class TblPlant  implements java.io.Serializable {
     public void setTblPathses(Set<TblPaths> tblPathses) {
         this.tblPathses = tblPathses;
     }
+    public Set<TblExceptions> getTblExceptionses() {
+        return this.tblExceptionses;
+    }
+    
+    public void setTblExceptionses(Set<TblExceptions> tblExceptionses) {
+        this.tblExceptionses = tblExceptionses;
+    }
+    public Set<TblDo> getTblDos() {
+        return this.tblDos;
+    }
+    
+    public void setTblDos(Set<TblDo> tblDos) {
+        this.tblDos = tblDos;
+    }
     public Set<TblVehicle> getTblVehicles() {
         return this.tblVehicles;
     }
@@ -128,12 +130,19 @@ public class TblPlant  implements java.io.Serializable {
     public void setTblVehicles(Set<TblVehicle> tblVehicles) {
         this.tblVehicles = tblVehicles;
     }
-    public Set<TblExceptions> getTblExceptionses() {
-        return this.tblExceptionses;
+    public Set<TblMapping> getTblMappings() {
+        return this.tblMappings;
     }
     
-    public void setTblExceptionses(Set<TblExceptions> tblExceptionses) {
-        this.tblExceptionses = tblExceptionses;
+    public void setTblMappings(Set<TblMapping> tblMappings) {
+        this.tblMappings = tblMappings;
+    }
+    public Set<TblUsers> getTblUserses() {
+        return this.tblUserses;
+    }
+    
+    public void setTblUserses(Set<TblUsers> tblUserses) {
+        this.tblUserses = tblUserses;
     }
     public Set<TblTransporter> getTblTransporters() {
         return this.tblTransporters;
@@ -142,12 +151,12 @@ public class TblPlant  implements java.io.Serializable {
     public void setTblTransporters(Set<TblTransporter> tblTransporters) {
         this.tblTransporters = tblTransporters;
     }
-    public Set<TblUsers> getTblUserses() {
-        return this.tblUserses;
+    public Set<TblProcess> getTblProcesses() {
+        return this.tblProcesses;
     }
     
-    public void setTblUserses(Set<TblUsers> tblUserses) {
-        this.tblUserses = tblUserses;
+    public void setTblProcesses(Set<TblProcess> tblProcesses) {
+        this.tblProcesses = tblProcesses;
     }
 
 

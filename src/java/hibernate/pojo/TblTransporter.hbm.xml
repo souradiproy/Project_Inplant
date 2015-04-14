@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
 "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
-<!-- Generated 5 Apr, 2015 5:42:48 PM by Hibernate Tools 4.3.1 -->
+<!-- Generated 14 Apr, 2015 8:17:12 PM by Hibernate Tools 4.3.1 -->
 <hibernate-mapping>
     <class name="hibernate.pojo.TblTransporter" table="tbl_transporter" schema="pr_inplant" optimistic-lock="version">
         <id name="ITransporterId" type="big_decimal">
@@ -32,17 +32,17 @@
         <property name="TTransporterEmailId" type="string">
             <column name="t_transporter_email_id" />
         </property>
-        <set name="tblDrivers" table="tbl_driver" inverse="true" lazy="true" fetch="select">
-            <key>
-                <column name="i_transporter_id" precision="32" scale="0" not-null="true" />
-            </key>
-            <one-to-many class="hibernate.pojo.TblDriver" />
-        </set>
         <set name="tblMappings" table="tbl_mapping" inverse="true" lazy="true" fetch="select">
             <key>
                 <column name="i_transporter_id" precision="30" scale="0" />
             </key>
             <one-to-many class="hibernate.pojo.TblMapping" />
+        </set>
+        <set name="tblDrivers" table="tbl_driver" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="i_transporter_id" precision="32" scale="0" not-null="true" />
+            </key>
+            <one-to-many class="hibernate.pojo.TblDriver" />
         </set>
     </class>
 </hibernate-mapping>

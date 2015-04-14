@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
 "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
-<!-- Generated 5 Apr, 2015 5:42:48 PM by Hibernate Tools 4.3.1 -->
+<!-- Generated 14 Apr, 2015 8:17:12 PM by Hibernate Tools 4.3.1 -->
 <hibernate-mapping>
     <class name="hibernate.pojo.TblUsers" table="tbl_users" schema="pr_inplant" optimistic-lock="version">
         <id name="SUsername" type="string">
@@ -17,15 +17,6 @@
         <property name="SPasswordMd5" type="string">
             <column name="s_password_md5" not-null="true" />
         </property>
-        <property name="ITransporterId" type="big_decimal">
-            <column name="i_transporter_id" precision="30" scale="0" />
-        </property>
-        <property name="IDriverId" type="big_decimal">
-            <column name="i_driver_id" precision="30" scale="0" />
-        </property>
-        <property name="BAddTrip" type="java.lang.Boolean">
-            <column name="b_add_trip" />
-        </property>
         <property name="BRemoveTrip" type="java.lang.Boolean">
             <column name="b_remove_trip" />
         </property>
@@ -34,6 +25,9 @@
         </property>
         <property name="BNodeView" type="java.lang.Boolean">
             <column name="b_node_view" />
+        </property>
+        <property name="BAddTrip" type="java.lang.Boolean">
+            <column name="b_add_trip" />
         </property>
         <property name="BViewException" type="java.lang.Boolean">
             <column name="b_view_exception" />
@@ -76,6 +70,12 @@
         </property>
         <property name="BLoggedIn" type="java.lang.Boolean">
             <column name="b_logged_in" />
+        </property>
+        <property name="ITransporterId" type="big_decimal">
+            <column name="i_transporter_id" precision="30" scale="0" />
+        </property>
+        <property name="IDriverId" type="big_decimal">
+            <column name="i_driver_id" precision="30" scale="0" />
         </property>
     </class>
 </hibernate-mapping>

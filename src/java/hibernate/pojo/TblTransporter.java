@@ -1,5 +1,5 @@
 package hibernate.pojo;
-// Generated 5 Apr, 2015 5:42:46 PM by Hibernate Tools 4.3.1
+// Generated 14 Apr, 2015 8:17:11 PM by Hibernate Tools 4.3.1
 
 
 import java.math.BigDecimal;
@@ -21,8 +21,8 @@ public class TblTransporter  implements java.io.Serializable {
      private String TTransporterState;
      private String ITransporterPin;
      private String TTransporterEmailId;
-     private Set<TblDriver> tblDrivers = new HashSet<TblDriver>(0);
      private Set<TblMapping> tblMappings = new HashSet<TblMapping>(0);
+     private Set<TblDriver> tblDrivers = new HashSet<TblDriver>(0);
 
     public TblTransporter() {
     }
@@ -32,7 +32,7 @@ public class TblTransporter  implements java.io.Serializable {
         this.ITransporterId = ITransporterId;
         this.tblPlant = tblPlant;
     }
-    public TblTransporter(BigDecimal ITransporterId, TblPlant tblPlant, String TTransporterName, String TTransporterMobileNo, String TTransporterAddr, String TTransporterCity, String TTransporterState, String ITransporterPin, String TTransporterEmailId, Set<TblDriver> tblDrivers, Set<TblMapping> tblMappings) {
+    public TblTransporter(BigDecimal ITransporterId, TblPlant tblPlant, String TTransporterName, String TTransporterMobileNo, String TTransporterAddr, String TTransporterCity, String TTransporterState, String ITransporterPin, String TTransporterEmailId, Set<TblMapping> tblMappings, Set<TblDriver> tblDrivers) {
        this.ITransporterId = ITransporterId;
        this.tblPlant = tblPlant;
        this.TTransporterName = TTransporterName;
@@ -42,8 +42,8 @@ public class TblTransporter  implements java.io.Serializable {
        this.TTransporterState = TTransporterState;
        this.ITransporterPin = ITransporterPin;
        this.TTransporterEmailId = TTransporterEmailId;
-       this.tblDrivers = tblDrivers;
        this.tblMappings = tblMappings;
+       this.tblDrivers = tblDrivers;
     }
    
     public BigDecimal getITransporterId() {
@@ -109,19 +109,19 @@ public class TblTransporter  implements java.io.Serializable {
     public void setTTransporterEmailId(String TTransporterEmailId) {
         this.TTransporterEmailId = TTransporterEmailId;
     }
-    public Set<TblDriver> getTblDrivers() {
-        return this.tblDrivers;
-    }
-    
-    public void setTblDrivers(Set<TblDriver> tblDrivers) {
-        this.tblDrivers = tblDrivers;
-    }
     public Set<TblMapping> getTblMappings() {
         return this.tblMappings;
     }
     
     public void setTblMappings(Set<TblMapping> tblMappings) {
         this.tblMappings = tblMappings;
+    }
+    public Set<TblDriver> getTblDrivers() {
+        return this.tblDrivers;
+    }
+    
+    public void setTblDrivers(Set<TblDriver> tblDrivers) {
+        this.tblDrivers = tblDrivers;
     }
 
 

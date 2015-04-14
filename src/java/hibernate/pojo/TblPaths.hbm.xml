@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
 "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
-<!-- Generated 5 Apr, 2015 5:42:48 PM by Hibernate Tools 4.3.1 -->
+<!-- Generated 14 Apr, 2015 8:17:12 PM by Hibernate Tools 4.3.1 -->
 <hibernate-mapping>
     <class name="hibernate.pojo.TblPaths" table="tbl_paths" schema="pr_inplant" optimistic-lock="version">
         <id name="IArrPath" type="serializable">
