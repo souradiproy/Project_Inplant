@@ -19,6 +19,7 @@ pageEncoding="ISO-8859-1"%>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Live View</title>
         <link rel="stylesheet" href="css/table.css">
+        <script src="js/endTrip.js"></script>
     </head>
     <body>
         
