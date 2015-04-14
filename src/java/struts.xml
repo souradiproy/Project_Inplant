@@ -1,0 +1,21 @@
+<!DOCTYPE struts PUBLIC
+"-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+"http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+    <!-- Configuration for the default package. -->
+    <constant name="struts.devMode" value="true" />
+    <package name="default" extends="struts-default">
+        
+        <action name="userLogin" class="struts.action.UserLoginAction" method="execute">
+            <result name="success">/jsp/ViewLive.jsp</result>
+        </action>
+        
+        <action name="loggedIn-*" >
+            <result name="success">/jsp/{1}.jsp</result>
+        </action>
+        <action name="Logout" >
+            <result>/jsp/Logout.jsp</result>
+        </action>
+    </package>
+</struts>
