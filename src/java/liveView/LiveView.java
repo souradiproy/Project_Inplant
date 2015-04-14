@@ -58,7 +58,7 @@ public class LiveView
             machineCodes.add(i.getIMachineId());
         }
         if(user.getBRemoveTrip())
-        liveViewString+="<th>Force End Trip</th>";
+            liveViewString+="<th>Force End Trip</th>";
         liveViewString+="</tr>";
         liveViewString+=("</thead>");
         
@@ -69,7 +69,6 @@ public class LiveView
         else
             tripList=tripListVar.getTripList(user.getITransporterId());
         
-        tripList=tripListVar.getTripList();
         liveViewString+=("<tbody>");
         if(tripList!=null)
         {
