@@ -14,20 +14,11 @@ pageEncoding="ISO-8859-1"%>
 "http://www.w3.org/TR/html4/loose.dtd">
 
 <!DOCTYPE html>
-<html>
-    <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Live View</title>
-        <link rel="stylesheet" href="css/styles.css">
-        <script src="js/jquery-min.js" type="text/javascript"></script>
-        <script src="js/script.js" type="text/javascript"></script>
-    </head>
-    <body>
-        
-        <h3>
-           <!--name: <s:property value="loginName"/>
-           password: <s:property value="password"/>
-           -->
+
+    <link rel="stylesheet" href="css/styles.css">
+    <script src="js/jquery-min.js" type="text/javascript"></script>
+    <script src="js/script.js" type="text/javascript"></script>
+     
            
             <%   
                ValueStack stack = ActionContext.getContext().getValueStack();
@@ -41,5 +32,5 @@ pageEncoding="ISO-8859-1"%>
                out.println(g.getHtml());
            %>
         </h3>
-    </body>
-</html>
+   
+

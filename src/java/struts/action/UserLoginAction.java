@@ -10,6 +10,7 @@ import com.opensymphony.xwork2.util.ValueStack;
 import hibernate.helper.InsertPlant;
 import java.util.HashMap;
 import java.util.Map;
+import org.hibernate.Hibernate;
 import org.hibernate.Session;
 
 /**
@@ -30,6 +31,8 @@ public class UserLoginAction {
     
         Session s=hibernate.helper.NewHibernateUtil.getSessionFactory().openSession();
         user=(hibernate.pojo.TblUsers)s.get(hibernate.pojo.TblUsers.class, loginName);
+        
+        //Hibernate.initialize(user.getTblPlant().getIPlantId());
         
         Map session = (Map) ActionContext.getContext().get("session");
         session.put("user", user);

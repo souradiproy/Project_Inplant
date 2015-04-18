@@ -8,7 +8,7 @@
     <package name="default" extends="struts-default">
         
         <action name="userLogin" class="struts.action.UserLoginAction" method="execute">
-            <result name="success">/jsp/LiveView.jsp</result>
+            <result name="success">/jsp/ViewTrips.jsp</result>
         </action>
         
         <action name="loggedIn-*" >
@@ -16,6 +16,9 @@
         </action>
         <action name="Logout" >
             <result>/jsp/Logout.jsp</result>
+        </action>
+        <action name="NodeView*" >
+            <result>/jsp/Node.jsp{1}</result>
         </action>
     </package>
 </struts>

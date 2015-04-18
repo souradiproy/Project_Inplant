@@ -5,6 +5,7 @@
  */
 package liveView;
 
+import hibernate.pojo.TblPlant;
 import java.math.BigDecimal;
 import java.util.List;
 import org.hibernate.Hibernate;
@@ -27,7 +28,7 @@ public class TripList
     /**
      * @return the TripDataList
      */
-    public List<hibernate.pojo.TblMapping> getTripList(BigDecimal ITransporterId) 
+    public List<hibernate.pojo.TblMapping> getTripList(BigDecimal IPlantID, BigDecimal ITransporterId) 
     {
         this.session = hibernate.helper.NewHibernateUtil.getSessionFactory().openSession();
         
@@ -36,9 +37,9 @@ public class TripList
             org.hibernate.Transaction tx = session.beginTransaction();
             Query q;
             if(!(ITransporterId.equals(new BigDecimal(-1))))
-                q=session.createQuery ("FROM hibernate.pojo.TblMapping where BIsActive=true And tblTransporter="+ITransporterId);
+                q=session.createQuery ("FROM hibernate.pojo.TblMapping where BIsActive=true And tblTransporter="+ITransporterId+" And tblPlant="+IPlantID);
             else
-                q=session.createQuery ("FROM hibernate.pojo.TblMapping where BIsActive=true");
+                q=session.createQuery ("FROM hibernate.pojo.TblMapping where BIsActive=true And tblPlant="+IPlantID);
             TripList = (List<hibernate.pojo.TblMapping>) q.list();
             for(hibernate.pojo.TblMapping i: TripList)
             {
@@ -56,14 +57,14 @@ public class TripList
         return TripList;
     }
     
-     public List<hibernate.pojo.TblMapping> getTripList()
+     public List<hibernate.pojo.TblMapping> getTripList(BigDecimal IPlantID)
      {
-         return getTripList(new BigDecimal(-1));
+         return getTripList(IPlantID,new BigDecimal(-1));
      }
      
      public static void main(String args[])
      {
          TripList t=new TripList();
-         System.out.println(t.getTripList());
+         //System.out.println(t.getTripList());
      }
 }

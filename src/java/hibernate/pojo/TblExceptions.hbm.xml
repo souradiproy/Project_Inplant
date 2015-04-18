@@ -1,12 +1,12 @@
 <?xml version="1.0"?>
 <!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
 "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
-<!-- Generated 14 Apr, 2015 8:17:12 PM by Hibernate Tools 4.3.1 -->
+<!-- Generated Apr 18, 2015 10:03:16 PM by Hibernate Tools 4.3.1 -->
 <hibernate-mapping>
     <class name="hibernate.pojo.TblExceptions" table="tbl_exceptions" schema="pr_inplant" optimistic-lock="version">
         <id name="IExceptionId" type="big_decimal">
             <column name="i_exception_id" precision="32" scale="0" />
-            <generator class="assigned" />
+            <generator class="native" />
         </id>
         <many-to-one name="tblEpos" class="hibernate.pojo.TblEpos" fetch="select">
             <column name="i_machine_id" precision="30" scale="0" not-null="true" />
@@ -22,6 +22,9 @@
         </property>
         <property name="dtExpectedTime" type="timestamp">
             <column name="dt_expected_time" length="29" />
+        </property>
+        <property name="dtArrivalTime" type="timestamp">
+            <column name="dt_arrival_time" length="29" />
         </property>
         <property name="BIsChecked" type="boolean">
             <column name="b_is_checked" not-null="true" />

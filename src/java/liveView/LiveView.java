@@ -32,7 +32,7 @@ public class LiveView
     
     public String getLiveView(TblUsers user) 
     {
-        liveViewString+="<table border=1 id=\"liveTable\">";
+        liveViewString+="<table border=\"1\" id=\"liveTable\" width=\"100%\">";
         liveViewString+="<thead>";
         liveViewString+="<tr>";
         List<hibernate.pojo.TblEpos> eposList = eposListVar.getEposList();
@@ -43,7 +43,7 @@ public class LiveView
             String href="#";
             if(user.getBNodeView())
             {
-                href="jsp/Node.jsp?id="+i.getIMachineId().toString();
+                href="NodeView?id="+i.getIMachineId().toString();
             }
             if(i.isBBothways())
             {
@@ -65,9 +65,9 @@ public class LiveView
         //Getting tripList by Transporter View
         List<hibernate.pojo.TblMapping> tripList;
         if(user.getITransporterId()==null)
-            tripList=tripListVar.getTripList();
+            tripList=tripListVar.getTripList(user.getTblPlant().getIPlantId());
         else
-            tripList=tripListVar.getTripList(user.getITransporterId());
+            tripList=tripListVar.getTripList(user.getTblPlant().getIPlantId(),user.getITransporterId());
         
         liveViewString+=("<tbody>");
         if(tripList!=null)
@@ -103,7 +103,7 @@ public class LiveView
                 rowId++;
             }
         }
-
+        liveViewString+="</table>";
         return liveViewString;
     }
     

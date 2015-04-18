@@ -3,10 +3,11 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package liveView;
+package exceptionView;
 
-import hibernate.pojo.TblVehicleFlight;
+import hibernate.pojo.TblExceptions;
 import java.math.BigDecimal;
+import java.math.BigInteger;
 import java.util.Collections;
 import java.util.List;
 import org.hibernate.Hibernate;
@@ -17,32 +18,25 @@ import org.hibernate.Session;
  *
  * @author Jonty
  */
-public class TripData 
+public class ExceptionList 
 {
     Session session = null;
-    private List<hibernate.pojo.TblVehicleFlight> TripDataList = null;
-    public TripData() 
-    {
-    }
+    private List<hibernate.pojo.TblExceptions> ExceptionList;
 
-    /**
-     * @return the TripDataList
-     */
-    public List<hibernate.pojo.TblVehicleFlight> getTripDataList(BigDecimal b) 
+    public List<TblExceptions> getExceptionList(BigDecimal IPlantID) 
     {
         this.session = hibernate.helper.NewHibernateUtil.getSessionFactory().openSession();
         try 
         {
             org.hibernate.Transaction tx = session.beginTransaction();
-            Query q = session.createQuery ("from TblVehicleFlight where i_trip_id="+b+"  order by dtTime");
-            TripDataList = (List<hibernate.pojo.TblVehicleFlight>) q.list();
-            Collections.sort(TripDataList);
-            for(TblVehicleFlight i:TripDataList)
+            Query q = session.createQuery ("from TblExceptions Where tblPlant="+IPlantID+" and BIsChecked=false");
+            ExceptionList = (List<TblExceptions>) q.list();
+            for(TblExceptions i:ExceptionList)
             {
                 Hibernate.initialize(i.getTblEpos());
-                Hibernate.initialize(i.getTblMapping().getTblVehicle().getTVehicleId());
+                Hibernate.initialize(i.getTblMapping().getTblVehicle());
             }
-        } 
+        }
         catch (Exception e) 
         {
             e.printStackTrace();
@@ -51,7 +45,8 @@ public class TripData
         {
             this.session.close();
         }
-        return TripDataList;
+        return ExceptionList;
     }
     
+     
 }

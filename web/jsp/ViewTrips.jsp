@@ -22,23 +22,19 @@ pageEncoding="ISO-8859-1"%>
         <script src="js/endTrip.js"></script>
     </head>
     <body>
+        <div id="top"><jsp:include page="Menu.jsp"/></div>
         
-        <h3>
-           <!--name: <s:property value="loginName"/>
-           password: <s:property value="password"/>
-           -->
+
+
+        <%   
+           ValueStack stack = ActionContext.getContext().getValueStack();
+           Map sesion = (Map)ActionContext.getContext().getSession();
+           hibernate.pojo.TblUsers user = (hibernate.pojo.TblUsers)sesion.get("user");
+
+           liveView.LiveView l = new liveView.LiveView();
+           out.println(l.getLiveView(user));
            
-            <%   
-               ValueStack stack = ActionContext.getContext().getValueStack();
-               //out.println("Size of the valueStack: " + stack.size()); //this is where we access the object
-               //hibernate.pojo.TblUsers user = (hibernate.pojo.TblUsers)stack.findValue("user");
-               
-               Map sesion = (Map)ActionContext.getContext().getSession();
-               hibernate.pojo.TblUsers user = (hibernate.pojo.TblUsers)sesion.get("user");
-               
-               liveView.LiveView l = new liveView.LiveView();
-               out.println(l.getLiveView(user));
-           %>
-        </h3>
+       %>
+        
     </body>
 </html>
