@@ -28,13 +28,13 @@ public class TripData
     /**
      * @return the TripDataList
      */
-    public List<hibernate.pojo.TblVehicleFlight> getTripDataList(BigDecimal b) 
+    public List<hibernate.pojo.TblVehicleFlight> getTripDataList(BigDecimal b, BigDecimal IPlantID) 
     {
         this.session = hibernate.helper.NewHibernateUtil.getSessionFactory().openSession();
         try 
         {
             org.hibernate.Transaction tx = session.beginTransaction();
-            Query q = session.createQuery ("from TblVehicleFlight where i_trip_id="+b+"  order by dtTime");
+            Query q = session.createQuery ("from TblVehicleFlight where i_trip_id="+b+" and IPlantId="+IPlantID+" order by dtTime");
             TripDataList = (List<hibernate.pojo.TblVehicleFlight>) q.list();
             Collections.sort(TripDataList);
             for(TblVehicleFlight i:TripDataList)

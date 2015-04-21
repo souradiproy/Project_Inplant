@@ -5,6 +5,7 @@
  */
 package liveView;
 
+import java.math.BigDecimal;
 import java.util.Collections;
 import java.util.List;
 import org.hibernate.Query;
@@ -24,19 +25,14 @@ public class EposList
         
     }
 
-    /**List<etrans.TblVehicleFlight> TripDataList = null;
-        
-     * @return the eposList
-     */
     
-    
-    public List<hibernate.pojo.TblEpos> getEposList() 
+    public List<hibernate.pojo.TblEpos> getEposList(BigDecimal IPlantID) 
     {
         this.session = hibernate.helper.NewHibernateUtil.getSessionFactory().openSession();
         try 
         {
             org.hibernate.Transaction tx = session.beginTransaction();
-            Query q = session.createQuery ("FROM hibernate.pojo.TblEpos");
+            Query q = session.createQuery ("FROM hibernate.pojo.TblEpos where tblPlant="+IPlantID);
             eposList = (List<hibernate.pojo.TblEpos>) q.list();
             Collections.sort(eposList);
         }

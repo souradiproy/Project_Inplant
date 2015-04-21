@@ -20,5 +20,9 @@
         <action name="NodeView*" >
             <result>/jsp/Node.jsp{1}</result>
         </action>
+        <action name="TripDetails*" >
+            <result>/jsp/TripDetails.jsp{1}</result>
+        </action>
+        
     </package>
 </struts>
