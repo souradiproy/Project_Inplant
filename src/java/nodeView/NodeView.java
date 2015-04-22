@@ -60,7 +60,7 @@ public class NodeView
             nodeViewString+=("<td>"+i.getTblDriver().getTDriverName()+"</td>");
             nodeViewString+=("<td>"+i.getTblTransporter().getTTransporterName()+"</td>");
             
-            List<hibernate.pojo.TblVehicleFlight> tripDataList = tripDataVar.getTripDataList(IPlantID,i.getITripId());
+            List<hibernate.pojo.TblVehicleFlight> tripDataList = tripDataVar.getTripDataList(i.getITripId(),IPlantID);
             hibernate.pojo.TblVehicleFlight lastChecked = tripDataList.get(tripDataList.size()-1);
             
             Calendar cal = Calendar.getInstance();
