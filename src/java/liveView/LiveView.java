@@ -76,7 +76,7 @@ public class LiveView
             for(hibernate.pojo.TblMapping i: tripList)
             {
                 BigDecimal tripid=i.getITripId();
-                List<hibernate.pojo.TblVehicleFlight> tripDataList = tripDataVar.getTripDataList(user.getTblPlant().getIPlantId(),tripid);
+                List<hibernate.pojo.TblVehicleFlight> tripDataList = tripDataVar.getTripDataList(tripid,user.getTblPlant().getIPlantId());
                 int TripDataListPointer=0;
                 liveViewString+=("<tr>");
                 String href = "TripDetails?trip="+i.getITripId();
