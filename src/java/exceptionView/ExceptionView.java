@@ -48,8 +48,9 @@ public class ExceptionView
         
         for(hibernate.pojo.TblExceptions i: ExceptionList)
         {
+            String href = "TripDetails?trip="+i.getTblMapping().getITripId();
             exceptionViewString+=("<tr>");
-            exceptionViewString+="<td>"+i.getTblMapping().getTblVehicle().getTVehicleId()+"</td>";
+            exceptionViewString+="<td><a href="+href+">"+i.getTblMapping().getTblVehicle().getTVehicleId()+"</a></td>";
             exceptionViewString+="<td>"+i.getDtCreated()+"</td>";
             exceptionViewString+="<td>"+i.getTblEpos().getTGatewayName()+"</td>";
             exceptionViewString+="<td>"+i.getDtExpectedTime()+"</td>";
