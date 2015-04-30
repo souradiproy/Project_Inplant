@@ -17,7 +17,7 @@ pageEncoding="ISO-8859-1"%>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Trip View</title>
-            <link rel="stylesheet" href="css/ExpandCollapse.css">
+        <link rel="stylesheet" href="css/ExpandCollapse.css?v=<%out.println(Math.random()%1000+"\"");%> >
             <script src="js/jquery-min.js"></script>
             <script src="js/ExpandCollapse.js"></script>
             

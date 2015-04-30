@@ -45,16 +45,9 @@ public class LiveView
             {
                 href="NodeView?id="+i.getIMachineId().toString();
             }
-            if(i.isBBothways())
-            {
-                liveViewString+="<th><a href=\""+href+"\">"+i.getTGatewayName()+" Entry</a></th>";
-                liveViewString+="<th><a href=\""+href+"\">"+i.getTGatewayName()+" Exit</a></th>";
-                machineCodes.add(i.getIMachineId());
-            }
-            else
-            {
+            
                 liveViewString+="<th><a href=\""+href+"\">"+i.getTGatewayName()+"</a></th>";
-            }
+            
             machineCodes.add(i.getIMachineId());
         }
         if(user.getBRemoveTrip())
