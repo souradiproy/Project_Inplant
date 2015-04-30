@@ -8,7 +8,7 @@
     <package name="default" extends="struts-default">
         
         <action name="userLogin" class="struts.action.UserLoginAction" method="execute">
-            <result name="success">/jsp/LiveView.jsp</result>
+            <result name="success">/jsp/insert/index.jsp</result>
         </action>
         
         <action name="loggedIn-*" >

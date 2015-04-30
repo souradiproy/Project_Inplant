@@ -38,7 +38,7 @@ public class TransporterInsertAction {
         TblPlant plant = i.get_tuple(num);*/
         
         Transporter_handler t = new Transporter_handler();
-        String result1 = t.insert_into_table(2,Integer.parseInt(Id), TTransporterName, TTransporterMobileNo, TTransporterAddr, TTransporterCity, TTransporterState, ITransporterPin, TTransporterEmailId);
+        String result1 = t.insert_into_table(Integer.parseInt(Id), TTransporterName, TTransporterMobileNo, TTransporterAddr, TTransporterCity, TTransporterState, ITransporterPin, TTransporterEmailId);
         
         Users_handler u = new Users_handler();
         String result2=u.insert_into_table(SUsername, Integer.parseInt(Id), SPassword, SPassword);

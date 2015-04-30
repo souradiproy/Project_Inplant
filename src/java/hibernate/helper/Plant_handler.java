@@ -48,7 +48,6 @@ public class Plant_handler extends sample_helper
             // org.hibernate.Transaction tx=session.beginTransaction();
             tx = session.beginTransaction();
             hibernate.pojo.TblPlant plant = new hibernate.pojo.TblPlant();
-            plant.setIPlantId(new BigDecimal(5));
             plant.setTPlantName(name);
             plant.setTPlantOwner(owner);
 

@@ -1,5 +1,5 @@
 package hibernate.pojo;
-// Generated 14 Apr, 2015 8:17:11 PM by Hibernate Tools 4.3.1
+// Generated Apr 17, 2015 9:43:47 PM by Hibernate Tools 4.3.1
 
 
 import java.util.Date;
@@ -20,7 +20,7 @@ public class TblVehicle  implements java.io.Serializable {
      private String TOwner;
      private String TNationalPermit;
      private Date dtLicenseExpiryDate;
-     private Set<TblMapping> tblMappings = new HashSet<TblMapping>(0);
+     private Set tblMappings = new HashSet(0);
 
     public TblVehicle() {
     }
@@ -30,7 +30,7 @@ public class TblVehicle  implements java.io.Serializable {
         this.TVehicleId = TVehicleId;
         this.tblPlant = tblPlant;
     }
-    public TblVehicle(String TVehicleId, TblPlant tblPlant, String TChasisNo, String TVehicleType, Long ILoadCapacity, String TOwner, String TNationalPermit, Date dtLicenseExpiryDate, Set<TblMapping> tblMappings) {
+    public TblVehicle(String TVehicleId, TblPlant tblPlant, String TChasisNo, String TVehicleType, Long ILoadCapacity, String TOwner, String TNationalPermit, Date dtLicenseExpiryDate, Set tblMappings) {
        this.TVehicleId = TVehicleId;
        this.tblPlant = tblPlant;
        this.TChasisNo = TChasisNo;
@@ -98,11 +98,11 @@ public class TblVehicle  implements java.io.Serializable {
     public void setDtLicenseExpiryDate(Date dtLicenseExpiryDate) {
         this.dtLicenseExpiryDate = dtLicenseExpiryDate;
     }
-    public Set<TblMapping> getTblMappings() {
+    public Set getTblMappings() {
         return this.tblMappings;
     }
     
-    public void setTblMappings(Set<TblMapping> tblMappings) {
+    public void setTblMappings(Set tblMappings) {
         this.tblMappings = tblMappings;
     }
 

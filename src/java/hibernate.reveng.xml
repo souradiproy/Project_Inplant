@@ -8,6 +8,7 @@
   <table-filter match-name="tbl_driver"/>
   <table-filter match-name="tbl_do"/>
   <table-filter match-name="tbl_vehicle"/>
+  <table-filter match-name="tbl_card"/>
   <table-filter match-name="tbl_process"/>
   <table-filter match-name="tbl_exceptions"/>
   <table-filter match-name="tbl_transporter"/>
